@@ -18,11 +18,7 @@ So, in an interview, I'd summarize it like this:
 Public cloud = someone else's infrastructure that I rent. Private cloud = infrastructure dedicated to my organization. Hybrid cloud = private + public environments working together. Multicloud = multiple cloud providers.
 
 2. Contrast: when would I choose each?
-Model	What it means	When I'd choose it	Main tradeoff
-Public cloud	Resources provided by a cloud provider	Most new applications, APIs, SaaS products, analytics, variable workloads	Less physical control
-Private cloud	Cloud infrastructure dedicated to one organization	Strict regulatory, security, or control requirements	Higher operational responsibility
-Hybrid cloud	Private environment + public cloud	Existing datacenter/legacy systems that need to integrate with cloud	Networking and operations become more complex
-Multicloud	Two or more public cloud providers	Specific provider capabilities, resilience strategy, acquisitions, or business requirements	More complexity and duplicated expertise
+![Table of Contrast](assets/table.png)
 
 The choice isn't simply "which cloud is best?"
 
