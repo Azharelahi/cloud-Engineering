@@ -92,6 +92,10 @@ Imagine I'm building a small Node.js REST API for an e-commerce application.
 
 ### Option A — IaaS
 
+# IaaS vs PaaS on Azure
+
+## Option A — IaaS
+
 I create an Azure Virtual Machine:
 
 ```text
@@ -106,10 +110,13 @@ Node.js
 My API
    ↓
 Database
+```
 
-### Option B — PaaS
+## Option B — PaaS
 
 Instead, I deploy the Node.js API to Azure App Service:
+
+```text
 Internet
    ↓
 Azure App Service
@@ -117,48 +124,63 @@ Azure App Service
 Node.js API
    ↓
 Database
+```
+
 Now Azure handles much more of the underlying infrastructure, while I concentrate primarily on:
-Application code
-Configuration
-Identity/access
-Data
+
+- Application code
+- Configuration
+- Identity/access
+- Data
+
 For a typical web API, I'd generally prefer PaaS unless I had a specific requirement for the additional control offered by IaaS.
-Hands-on artifact
+
+## Hands-on artifact
+
 A good portfolio exercise would be:
-Create a small Node.js API.
-Deploy it to Azure App Service.
-Configure an environment variable.
-Enable application logging.
-Connect it to a managed database.
-Document what you configured vs what Azure manages.
-Explain why you chose PaaS instead of a VM.
+
+1. Create a small Node.js API.
+2. Deploy it to Azure App Service.
+3. Configure an environment variable.
+4. Enable application logging.
+5. Connect it to a managed database.
+6. Document what you configured vs what Azure manages.
+7. Explain why you chose PaaS instead of a VM.
+
 That last part is important for a recruiter: it demonstrates that you understand architecture decisions, not just Azure commands.
 
-5. Interview angle
+## 5. Interview angle
 
-Q1. "What's the difference between IaaS and PaaS?"
+**Q1. "What's the difference between IaaS and PaaS?"**
+
 Model answer:
 IaaS provides infrastructure such as virtual machines, networking, and storage, while I manage the OS and application stack. PaaS abstracts more of that infrastructure so I can focus primarily on deploying and operating my application. I choose PaaS when I don't need low-level OS control and want to reduce operational overhead.
 
-Q2. "If you're using Azure, is Azure responsible for security?"
+**Q2. "If you're using Azure, is Azure responsible for security?"**
+
 Model answer:
 Security is shared. Azure is responsible for securing the underlying cloud infrastructure, while I remain responsible for things within my control, such as identities, access permissions, application security, data, and depending on the service, the operating system and network configuration.
 
-Q3. "Why wouldn't you always choose PaaS?"
+**Q3. "Why wouldn't you always choose PaaS?"**
+
 Model answer:
 Because PaaS trades some control for convenience. If I need a custom operating system, specialized software, unusual networking, or low-level configuration that the platform doesn't support, I may need IaaS. The right choice depends on the application's requirements rather than simply choosing the most managed option.
 
-6. Terms to know
-Virtual Machine (VM): A software-defined computer providing an IaaS environment.
-Azure App Service: Microsoft's managed PaaS for hosting web applications and APIs.
-SaaS: Finished software consumed as a service rather than built or managed by the customer.
-Shared Responsibility Model: Defines which security and operational responsibilities belong to the provider and customer.
-Managed Service: A cloud service where the provider operates more of the underlying infrastructure.
-Serverless: A highly managed execution model where infrastructure management is largely abstracted from the developer.
-Scalability: The ability of a system to handle increased workload by adding resources.
-Identity and Access Management (IAM): Controls who can access which cloud resources and what they can do.
-Infrastructure as Code (IaC): Defining infrastructure through code/configuration rather than manual setup.
-Azure Resource Manager (ARM): Azure's management layer for deploying and organizing resources.
-The one thing I'd remember for an interview
+## 6. Terms to know
+
+- **Virtual Machine (VM):** A software-defined computer providing an IaaS environment.
+- **Azure App Service:** Microsoft's managed PaaS for hosting web applications and APIs.
+- **SaaS:** Finished software consumed as a service rather than built or managed by the customer.
+- **Shared Responsibility Model:** Defines which security and operational responsibilities belong to the provider and customer.
+- **Managed Service:** A cloud service where the provider operates more of the underlying infrastructure.
+- **Serverless:** A highly managed execution model where infrastructure management is largely abstracted from the developer.
+- **Scalability:** The ability of a system to handle increased workload by adding resources.
+- **Identity and Access Management (IAM):** Controls who can access which cloud resources and what they can do.
+- **Infrastructure as Code (IaC):** Defining infrastructure through code/configuration rather than manual setup.
+- **Azure Resource Manager (ARM):** Azure's management layer for deploying and organizing resources.
+
+## The one thing I'd remember for an interview
+
 If I'm asked about IaaS, PaaS, SaaS, I wouldn't just recite definitions. I'd explain the responsibility boundary and the tradeoff:
+
 The further I move from IaaS toward SaaS, the more the cloud provider manages for me. I gain operational simplicity but give up some control. The right choice depends on how much control my application actually requires.
