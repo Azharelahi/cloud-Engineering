@@ -29,7 +29,9 @@ For example, with an Azure virtual machine, Microsoft manages the physical datac
 With a managed platform service, Microsoft takes responsibility for much more of the underlying stack.
 
 ## 2. IaaS vs PaaS vs SaaS Contrast
+
 ![Table of Contrast](assets/table2.png)
+
 ### When would I choose each?
 
 **IaaS:**
@@ -44,7 +46,9 @@ I'd choose it for most typical web applications when I want to deploy code witho
 I'd choose it when I don't need to build the software at all.
 *Example: Instead of building my own email or collaboration platform, I use Microsoft 365.*
 
-![Table of Contrast](assets/saas-vs-paas-vs-iaas.png)
+<p align="center">
+  <img src="assets/saas-vs-paas-vs-iaas.png" alt="Table of Contrast" width="60%">
+</p>
 
 A useful way to remember the tradeoff is:
 
@@ -103,6 +107,16 @@ My API
    ↓
 Database
 
+### Option B — PaaS
+
+Instead, I deploy the Node.js API to Azure App Service:
+Internet
+   ↓
+Azure App Service
+   ↓
+Node.js API
+   ↓
+Database
 Now Azure handles much more of the underlying infrastructure, while I concentrate primarily on:
 Application code
 Configuration
@@ -119,16 +133,21 @@ Connect it to a managed database.
 Document what you configured vs what Azure manages.
 Explain why you chose PaaS instead of a VM.
 That last part is important for a recruiter: it demonstrates that you understand architecture decisions, not just Azure commands.
+
 5. Interview angle
+
 Q1. "What's the difference between IaaS and PaaS?"
 Model answer:
 IaaS provides infrastructure such as virtual machines, networking, and storage, while I manage the OS and application stack. PaaS abstracts more of that infrastructure so I can focus primarily on deploying and operating my application. I choose PaaS when I don't need low-level OS control and want to reduce operational overhead.
+
 Q2. "If you're using Azure, is Azure responsible for security?"
 Model answer:
 Security is shared. Azure is responsible for securing the underlying cloud infrastructure, while I remain responsible for things within my control, such as identities, access permissions, application security, data, and depending on the service, the operating system and network configuration.
+
 Q3. "Why wouldn't you always choose PaaS?"
 Model answer:
 Because PaaS trades some control for convenience. If I need a custom operating system, specialized software, unusual networking, or low-level configuration that the platform doesn't support, I may need IaaS. The right choice depends on the application's requirements rather than simply choosing the most managed option.
+
 6. Terms to know
 Virtual Machine (VM): A software-defined computer providing an IaaS environment.
 Azure App Service: Microsoft's managed PaaS for hosting web applications and APIs.
@@ -143,4 +162,3 @@ Azure Resource Manager (ARM): Azure's management layer for deploying and organiz
 The one thing I'd remember for an interview
 If I'm asked about IaaS, PaaS, SaaS, I wouldn't just recite definitions. I'd explain the responsibility boundary and the tradeoff:
 The further I move from IaaS toward SaaS, the more the cloud provider manages for me. I gain operational simplicity but give up some control. The right choice depends on how much control my application actually requires.
-```
